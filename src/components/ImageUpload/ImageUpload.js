@@ -4,7 +4,7 @@ import {uploadImage} from '../service-functions/service-functions';
 
 function ImageUpload(props){
   return(
-    <>
+    <div>
       <form 
         action={
           props.user ? `http://localhost:8000/image/${props.user.uid}/add-image` 
@@ -17,7 +17,7 @@ function ImageUpload(props){
         <input type="file" name="image-file"/>
         <input type="submit" value="Upload"/>
       </form>
-    </>
+    </div>
   )
 };
 

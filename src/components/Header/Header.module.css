@@ -22,15 +22,18 @@
 
 .welcome{
   text-transform: uppercase;
+  color:white;
 }
 
 .button{
   color: black;
   font-weight: 500;
-  width: 6.5rem;
-  border-radius: 0.2rem;
 }
 
 .homeButton{
   margin-left: 1rem;
+}
+
+.black{
+  color:black !important;
 }

@@ -1,0 +1,112 @@
+.white{
+  color:white;
+}
+
+.delete{
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 2px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+#interactions{
+  writing-mode: vertical-rl;
+}
+
+.card{
+  display:flex;
+}
+
+.interactionContainer{
+  width: 4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.arrowContainer{
+  width: 2rem;
+}
+
+.galleryContainer{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(18, 18, 18);
+  height: 90vh;
+}
+
+.imageDesc{
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-left: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.desc{
+  margin: 1rem 0 0 0;
+  text-align: left;
+  color: white;
+}
+
+#title{
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.image{
+  height: 90vh;
+}
+
+.dateInput{
+  transform: (90deg);
+  width: 3rem;
+  border-radius: 4px;
+  background-color: rgb(199, 199, 199);
+  margin-left: 0.25rem;
+}
+
+/* .heartContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+} */
+.heart{
+  width: 3rem;
+  margin-left: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+
+.arrowContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-left: 2rem; */
+  width: 10vw;
+}
+.arrowLeft {
+  width: 0; 
+  height: 0; 
+  border-top: 1.6rem solid transparent;
+  border-bottom: 1.6rem solid transparent; 
+  border-right:2.2rem solid white; 
+}
+
+.arrowLeft:hover{
+  border-right: 2.2rem solid #64DD17;
+}
+
+.arrowRight {
+  width: 0; 
+  height: 0; 
+  border-top: 1.6rem solid transparent;
+  border-bottom: 1.6rem solid transparent; 
+  border-left:2.2rem solid white; 
+}
+
+.arrowRight:hover{
+  border-left: 2.2rem solid #64DD17;
+}

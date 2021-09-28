@@ -1,6 +1,7 @@
 import ImageUpload from './components/ImageUpload/ImageUpload';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
+import Gallery from './components/Gallery/Gallery';
 import { onAuthStateChanged } from "firebase/auth";
 import {auth} from './services/firebase';
 import { BrowserRouter,Switch, Route } from 'react-router-dom';
@@ -26,6 +27,10 @@ async function getAllImages(set){
 }
 
 function App() {
+
+  const [currentImage, setCurrentImage] = useState(0)
+
+  const [currentUserImage, setCurrentUserImage] = useState(0)
 
   const [userState, setUserState] = useState({
     user: null,
@@ -68,7 +73,29 @@ function App() {
         <Switch>
           <Route path="/upload" >
             <Header user={userState.user}/>
-            <ImageUpload/>
+            <ImageUpload user={userState.user}/>
+          </Route>
+          <Route path="/gallery">
+            <Header user={userState.user}/>
+            <Gallery 
+              currentImage={currentImage} 
+              setCurrentImage={setCurrentImage} 
+              image={images[currentImage]}
+              gallerySizeMinusOne={images.length-1}
+              personal={false}
+              user={userState.user}
+            />
+          </Route>
+          <Route path="/user/gallery">
+            <Header user={userState.user}/>
+            <Gallery
+              currentImage={currentUserImage} 
+              setCurrentImage={setCurrentUserImage} 
+              image={userImages[currentUserImage]}
+              gallerySizeMinusOne={userImages.length-1}
+              personal={true}
+              user={userState.user}
+            />
           </Route>
           <Route path="">
             <Header user={userState.user}/>
