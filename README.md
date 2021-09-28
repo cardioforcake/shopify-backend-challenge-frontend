@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+## Stan Chao | Shopify Backend Challenge - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Frontend Netlify deployment](https://image-repository-challenge.netlify.app/)
+[Backend Heroku deployment](https://image-repository-challenge.herokuapp.com/)
 
-## Available Scripts
+#### Full Disclaimer
 
-In the project directory, you can run:
+The application does not function as intended. I decided to try building a separate Django Backend (I have previous experience using Django Views). The app fully functions on the localhost. However, it was not until after I deployed the website that I discovered issues with trying to access the database from Heroku.
 
-### `npm start`
+I discovered that Heroku does not allow an outisde source to access the embedded SQLite/Postgresql database. In order to access that database, I would need to create a SSL certificate for my frontend. However, the free Heroku account does allow for the creation of SSL certificates.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+With additional time, I will implement a SSL certificate to allow my frontend to access my Heroku postgresql database. I have more experience working with Express/MongoDB backend, However, I decided to use Django/Pythong/SQLite3 as I understand that it is similar to Ruby on Rails which is used by Shopify.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+See list of features below.
 
-### `npm test`
+#### Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- separate [frontend](https://image-repository-challenge.netlify.app/) and [backend](https://image-repository-challenge.herokuapp.com/)
+- [Backend Github](https://github.com/cardioforcake/shopify-backend-challenge-backend)
+- Backend is built using Django and SQLite3 Database
+- Backend is configered for Amazon AWS S3 image hosting
+- Frontend is built using React and borrows code (repurposed) from my other projects including the [Shopify Frontend Challenge](https://stanchao-shopifychallenge.netlify.app/)
+- Features Google Firebase authentication through the frontend
+- (Query User Images)User is able to upload images (with "title" and "creator" properties). If images are uploaded while logged in, the use is then able to query the backend to pull up all the images that they added. However the user does not need to be logged in, in order to upload anoynmous images.
+- (Delete) While logged in, the user is also able to delete the images that they added. The data for the image passed to the frontend does not include the ID of the user who added to image (however this information is stored in the back end via relationship between User and Image model). A deletion request is sent to the backend with the id of the logged in user. The image is only deleted if the id matches the id stored in the connection table)
+- (Query All) A user is able to also see all the uploaded images
