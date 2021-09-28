@@ -1,14 +1,11 @@
-import {uploadImage} from '../service-functions/service-functions';
-
-
 
 function ImageUpload(props){
   return(
     <div>
       <form 
         action={
-          props.user ? `http://localhost:8000/image/${props.user.uid}/add-image` 
-          : "http://localhost:8000/image/add-image"
+          props.user ? `https://image-repository-challenge.herokuapp.com/image/${props.user.uid}/add-image` 
+          : "https://image-repository-challenge.herokuapp.com/image/add-image"
         } 
         method="POST" enctype="multipart/form-data"
       >
