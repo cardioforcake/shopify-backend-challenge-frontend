@@ -53,7 +53,7 @@ function Gallery(props){
             <img alt="empty heart" src="/heartfilled.png" className={styles.heart} onClick={()=>toggleLiked(setLiked, liked, props.image['id'])}></img>
           }
           {props.personal && props.user && props.image.url !== "" ?
-            <form action={`https://image-repository-challenge.herokuapp.com/user/${props.user.uid}/delete/${props.image.id}`}>
+            <form action={`http://localhost:8000/user/${props.user.uid}/delete/${props.image.id}`}>
               <input className={styles.delete} type="submit" value="DELETE"/>
             </form> :
             <></>
